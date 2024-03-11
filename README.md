@@ -20,4 +20,13 @@ Feasibility: If the total weight included in the lorry plus the weight of the ca
 Selection:* Selection is not required, since the candidates we will select won´t be cancelled after selection in any case.
 Ending condition: If the total weight included in the lorry plus the weight of the candidate item is greater than the remaining capacity, then the algorithm finishes.
 
-Pseudocode:
+## Pseudocode:
+
+Candidates: Object[]{price=40;weight}.
+Ordering: Increasing weight; totalPrice=0; totalWeight=0;capacity=10;i=0;
+
+Feasibility: if(totalWeight+weight(i)<=capacity){totalWeight+=Weight(i); capacity-=Weight(i);i++;totalPrice+=40;} 
+             else end;
+
+Selection:* Selection is not required, since the candidates we will select won´t be cancelled after selection in any case.
+Ending condition: else
