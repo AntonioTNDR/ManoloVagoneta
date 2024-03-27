@@ -1,5 +1,4 @@
-# ManoloVagoneta
-El proyecto este que tenemos que hacer aún encima en C para algoritmos, dios nos salve
+# Greedy algorithm 2023/2024
 
 ## Group members:
 - David García Guirado
