@@ -39,3 +39,7 @@ Feasibility: if(totalWeight+weight(i)<=capacity){
 Selection:* Selection is not required, since the candidates we will select won´t be cancelled after selection in any case.
 
 Ending condition: else
+
+## Computational cost:
+As we know, the computational cost of a greedy algorithm is the one that comes from the sorting algorithm. In our case, we used merge sort, which means that in the average case the computational cost of our algorithm will be nlog(n).
+
