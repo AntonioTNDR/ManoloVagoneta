@@ -47,7 +47,7 @@ void main() {
     // GREEDY ALGORITHM >>> Store selected elements in array 'selected'
     int selected[i];
     int money = greedy(list, i, 20, selected);
-    gettimeofday(&tf, NULL);   // Instante final
+    gettimeofday(&tf, NULL);   // Final instant
     time= (tf.tv_sec - ti.tv_sec)*1000 + (tf.tv_usec - ti.tv_usec)/1000.0;
     printf("Time spent: %g miliseconds\n", time);
     // Print results = Money + Selected items
