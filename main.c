@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <winsock.h>
+#include <sys/time.h>
 /*
     GREEDY ALGORITHMS ASSIGNMENT
     - Tendero Beltrán, Antonio (49428050S)
@@ -29,9 +30,8 @@ int greedy(int weight[], int n, int totalWeight, int selected[]) {
 }
 
 void main() {
-    int list[20]; // CANDIDATES (up to 20)
+    int list[1000]; // CANDIDATES (up to 20)
     int i = 0, input = 0;
-
     // Ask for the input (Candidates)
     printf("Enter weight for each item:\n");
     while (1) {
@@ -40,17 +40,27 @@ void main() {
         list[i] = input;
         i++;
     }
-
+    i=0;
+    for (int j=0;j<1000;j++){
+        list[j]=j+1;
+        i++;
+    }
+    struct timeval ti, tf;
+    double time;
+    gettimeofday(&ti, NULL);
     // GREEDY ALGORITHM >>> Store selected elements in array 'selected'
     int selected[i];
     int money = greedy(list, i, 20, selected);
-
+    gettimeofday(&tf, NULL);   // Instante final
+    time= (tf.tv_sec - ti.tv_sec)*1000 + (tf.tv_usec - ti.tv_usec)/1000.0;
+    printf("Time spent: %g miliseconds\n", time);
     // Print results = Money + Selected items
     printf("Money = %d\n", money);
     printf("Selected items' (%d) weight:\n", money/40);
     for (int j = 0; j < money/40; ++j) { // Print list sorted (money/40 = Nº elements)
         printf("%d, ", selected[j]);
     }
+    while (1);
 }
 
 
